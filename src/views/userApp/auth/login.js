@@ -17,24 +17,38 @@ import CIcon from "@coreui/icons-react";
 import { cilLockLocked, cilUser } from "@coreui/icons";
 import axios from "axios";
 import { adminAxiosInstance, userAxiosInstance } from "src/config";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
+    setLoading(true);
     try {
       const response = await userAxiosInstance.post("/auth/login", {
         email,
         password,
       });
+      toast.success("Signin Successfully!", {
+        duration: 2000,
+      });
       localStorage.setItem("uID", response?.data?.data?.token);
-      navigate("/dashboard");
+      navigate("/");
       // console.log("email, pass", response);
     } catch (error) {
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong! Please try again later.",
+        {
+          duration: 2000,
+        }
+      );
       console.log("error", error);
     }
+    setLoading(false);
   };
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -78,14 +92,15 @@ const Login = () => {
                           color="primary"
                           className="px-4"
                           onClick={() => handleLogin()}
+                          disabled={loading}
                         >
-                          Login
+                          {loading ? "Please wait" : "Login"}
                         </CButton>
                       </CCol>
                       <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
+                        {/* <CButton color="link" className="px-0">
                           Forgot password?
-                        </CButton>
+                        </CButton> */}
                       </CCol>
                     </CRow>
                   </CForm>

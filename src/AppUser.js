@@ -1,8 +1,9 @@
 import React, { Component, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./scss/style.scss";
-import Register from "./views/pages/register/Register";
 import Login from "./views/userApp/auth/login";
+import Index from "./views/userApp";
+import Register from "./views/userApp/auth/register";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -20,6 +21,7 @@ const AppUser = () => {
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
+        <Route exact path="/" element={<Index />} />
         {/* <Route path="/" element={<Navigate replace to="/login" />} /> */}
       </Routes>
     </>
