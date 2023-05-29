@@ -50,20 +50,17 @@ const UserList = () => {
         <CTableBody>
           {data &&
             data?.map((item, index) => {
-              <CTableRow key={index}>
-                <CTableHeaderCell scope="row">1</CTableHeaderCell>
-                <CTableDataCell>{item?.firstName}</CTableDataCell>
-                <CTableDataCell>{item?.lastName}</CTableDataCell>
-                <CTableDataCell>{item?.displayName}</CTableDataCell>
-                <CTableDataCell>{item?.email}</CTableDataCell>
-                <CTableDataCell>{item?.mobile}</CTableDataCell>
-              </CTableRow>;
+              return (
+                <CTableRow key={index}>
+                  <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                  <CTableDataCell>{item?.firstName}</CTableDataCell>
+                  <CTableDataCell>{item?.lastName}</CTableDataCell>
+                  <CTableDataCell>{item?.displayName}</CTableDataCell>
+                  <CTableDataCell>{item?.email}</CTableDataCell>
+                  <CTableDataCell>{item?.mobile}</CTableDataCell>
+                </CTableRow>
+              );
             })}
-          <CTableRow>
-            <CTableHeaderCell scope="row">3</CTableHeaderCell>
-            <CTableDataCell colSpan={2}>Larry the Bird</CTableDataCell>
-            <CTableDataCell>@twitter</CTableDataCell>
-          </CTableRow>
         </CTableBody>
       </CTable>
     </>

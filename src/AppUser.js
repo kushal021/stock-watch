@@ -4,6 +4,7 @@ import "./scss/style.scss";
 import Login from "./views/userApp/auth/login";
 import Index from "./views/userApp";
 import Register from "./views/userApp/auth/register";
+import Header from "./views/userApp/components/Header";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -18,6 +19,7 @@ const AppUser = () => {
   return (
     //  <Suspense fallback={loading}>
     <>
+      <Header />
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
