@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import ApexCharts from "../userApp/components/ChartComp";
 import Slider from "src/helper/Slider";
 import { CCol, CRow } from "@coreui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [sliderData, setSliderData] = useState([]);
   const [viceVersa, setViceVersa] = useState(false);
-
+  const navigate = useNavigate();
   const arr = [
     {
       _id: "639acb46eedaa913c8fe912b",
@@ -364,7 +364,7 @@ const Index = () => {
     // if (region === "Indian") {
     //   navigate(`/buy-indian-stocks/${id}`);
     // } else {
-    //   navigate(`/buy-international-stocks/${id}`);
+    navigate(`/stocks/test-stock`);
     // }
   };
 
@@ -388,12 +388,9 @@ const Index = () => {
             <CCol xl={5} className="left-block">
               <div className="left-content">
                 <div className="main-title1">
-                  Globally Trusted Platform for
-                  <span className="prime-txt">
-                    {" "}
-                    Unlisted Stock, Pre IPO Stocks
-                  </span>{" "}
-                  &<span className="prime-txt"> Illiquid Investments</span>
+                  Trusted Platform to Provide the smart opportunities for
+                  <span className="prime-txt"> trading as</span> well
+                  <span className="prime-txt"> as investment.</span>
                 </div>
                 <div className="buttons-content">
                   <button
@@ -402,12 +399,12 @@ const Index = () => {
                     onMouseOut={() => setViceVersa(false)}
                   >
                     <Link
-                      to="/buy-indian-stocks"
+                      to="/stocks"
                       className={`know_link ${!viceVersa ? "sell" : "buy"}`}
                       onMouseOver={() => setViceVersa(!viceVersa)}
                       onMouseOut={() => setViceVersa(false)}
                     >
-                      Available Unlisted Shares
+                      View Stocks
                     </Link>
                   </button>
                   <button
@@ -416,18 +413,20 @@ const Index = () => {
                     onMouseOut={() => setViceVersa(false)}
                   >
                     <Link
-                      to="/Liquidate-Investments"
+                      to="/stocks"
                       className={`know_link ${!viceVersa ? "buy" : "sell"}`}
                       onMouseOver={() => setViceVersa(!viceVersa)}
                       onMouseOut={() => setViceVersa(false)}
                     >
-                      Liquidate Unlisted Shares
+                      Get Insights
                     </Link>
                   </button>
                 </div>
                 <div className="main-title">
-                  We can assist you with the liquidation of any other illiquid
-                  investments you may own, such as :
+                  Stock watch is user friendly platform where one can find an
+                  automated digital signal for trader as well as investor. An
+                  indicator based signal which gives you smart profit with good
+                  accuracy :
                 </div>
               </div>
             </CCol>

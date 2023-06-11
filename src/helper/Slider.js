@@ -85,7 +85,7 @@ const Slider = ({ data, direction, clickOnItem }) => {
               <img
                 className="slider_img"
                 src={item?.logo}
-                onError={(e) => (e.target.src = imageError)}
+                // onError={(e) => (e.target.src = imageError)}
                 alt="Img 1"
               />
               {/* <div>

@@ -5,6 +5,8 @@ import Login from "./views/userApp/auth/login";
 import Index from "./views/userApp";
 import Register from "./views/userApp/auth/register";
 import Header from "./views/userApp/components/Header";
+import OneStock from "./views/userApp/pages/oneStock";
+import CompanyList from "./views/userApp/pages/companyList";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -24,6 +26,8 @@ const AppUser = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/" element={<Index />} />
+        <Route exact path="/stocks" element={<CompanyList />} />
+        <Route exact path="/stocks/:stockId" element={<OneStock />} />
         {/* <Route path="/" element={<Navigate replace to="/login" />} /> */}
       </Routes>
     </>

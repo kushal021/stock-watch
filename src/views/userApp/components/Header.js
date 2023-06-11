@@ -1,12 +1,23 @@
-import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import SwLogo from "../../../assets/brand/swLogo.jpg";
+import CIcon from "@coreui/icons-react";
+import { cilUser } from "@coreui/icons";
+import { CDropdown, CDropdownMenu, CDropdownToggle } from "@coreui/react";
+import "../../../scss/header.scss";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [isToken, setIsToken] = useState(null);
+
   console.log("locatin=====>", location);
+
+  useEffect(() => {
+    const token = localStorage.getItem("uID");
+    setIsToken(token);
+  }, []);
   return (
     <>
       <div className="container">
@@ -55,7 +66,7 @@ const Header = () => {
                     Stocks
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     className={`nav-link ${
                       location.pathname === "/account" && "nav-active"
@@ -64,7 +75,7 @@ const Header = () => {
                   >
                     Account
                   </Link>
-                </li>
+                </li> */}
               </ul>
               {/* <button
                 className="btn btn-outline-dark fw-bold"
@@ -72,13 +83,64 @@ const Header = () => {
               >
                 Login
               </button> */}
+              {!isToken ? (
+                <button
+                  className="btn btn-mod btn-border btn-circle btn-medium"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </button>
+              ) : (
+                <>
+                  <CIcon icon={cilUser} size="xl" />
+                  <CDropdown className="mobile_drop_query">
+                    <CDropdownToggle
+                      color="ghost"
+                      className="nav-link text-start"
+                    >
+                      {/* <CIcon icon={cilHamburgerMenu}></CIcon> */}
+                      profile
+                      <CDropdownMenu>
+                        {/* <NavLink
+                          className={"nav-drop dropdown-item"}
+                          to={"/dashboard"}
+                          // onClick={() => setVisible(false)}
+                        >
+                          Dashboard
+                        </NavLink> */}
 
-              <button
+                        <a
+                          // onClick={logout}
+                          className={"nav-drop dropdown-item"}
+                        >
+                          Logout
+                        </a>
+                        {/* {isToken ? (
+                        <>
+
+                        </>
+                      ) : (
+                        <>
+                          <a
+                            onClick={() => setLoginModal(!loginModal)}
+                            className={"nav-drop dropdown-item"}
+                          >
+                            Login
+                          </a>
+                        </>
+                      )} */}
+                      </CDropdownMenu>
+                    </CDropdownToggle>
+                  </CDropdown>
+                </>
+              )}
+
+              {/* <button
                 className="btn btn-mod btn-border btn-circle btn-medium"
                 onClick={() => navigate("/login")}
               >
-                Login
-              </button>
+                Logout
+              </button> */}
             </div>
           </div>
         </nav>
