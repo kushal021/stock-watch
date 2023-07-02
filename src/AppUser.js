@@ -7,6 +7,7 @@ import Register from "./views/userApp/auth/register";
 import Header from "./views/userApp/components/Header";
 import OneStock from "./views/userApp/pages/oneStock";
 import CompanyList from "./views/userApp/pages/companyList";
+import Footer from "./views/userApp/components/Footer";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -30,6 +31,7 @@ const AppUser = () => {
         <Route exact path="/stocks/:stockId" element={<OneStock />} />
         {/* <Route path="/" element={<Navigate replace to="/login" />} /> */}
       </Routes>
+      <Footer />
     </>
   );
 };

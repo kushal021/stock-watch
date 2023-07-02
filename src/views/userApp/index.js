@@ -3,6 +3,8 @@ import ApexCharts from "../userApp/components/ChartComp";
 import Slider from "src/helper/Slider";
 import { CCol, CRow } from "@coreui/react";
 import { Link, useNavigate } from "react-router-dom";
+import stockImg from "../../assets/images/6256458.jpg";
+import HomeBelow from "./pages/homeBelow";
 
 const Index = () => {
   const [sliderData, setSliderData] = useState([]);
@@ -432,7 +434,7 @@ const Index = () => {
             </CCol>
             <CCol xl={7} className="p-3 py-0 slider-view-box">
               <div className="slider_box">
-                <div className="slider-row">
+                {/* <div className="slider-row">
                   <Slider
                     data={sliderData[0]}
                     clickOnItem={clickOnCompony}
@@ -446,7 +448,8 @@ const Index = () => {
                     direction="right"
                     class="revert-grid"
                   />
-                </div>
+                </div> */}
+                <img src={stockImg} height="500px" width="700px" />
               </div>
             </CCol>
           </CRow>
@@ -469,6 +472,7 @@ const Index = () => {
           />
         </div>
       </div> */}
+      <HomeBelow />
     </>
   );
 };
