@@ -5,6 +5,30 @@ import { useNavigate } from "react-router-dom";
 const CompanyList = () => {
   const navigate = useNavigate();
 
+  const shareData = [
+    "21STCENMGM",
+    "360ONE",
+    "20MICRONS",
+    "3IINFOLTD",
+    "3PLAND",
+    "4THDIM",
+    "63MOONS",
+    "5PAISA",
+    "8KMILES",
+    "A2ZINFRA",
+    "AAATECH",
+    "AAKASH",
+    "AAREYDRUGS",
+    "AARON",
+    "AARTI-RE",
+    "AARTIDRUGS",
+    "AARTIIND",
+    "AARTIPHARM",
+    "AARTISURF",
+    "AARVEEDEN",
+    "AARVI",
+  ];
+
   const allData = [
     {
       _id: "625fc7575e56873c7738aaee",
@@ -404,6 +428,31 @@ const CompanyList = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div class="container table-responsive py-5">
+        <table class="table table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Share Name</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {shareData?.map((item, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>{item}</td>
+                <td
+                  className="pe-auto"
+                  onClick={() => navigate(`/stocks/${item}`)}
+                >
+                  View
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

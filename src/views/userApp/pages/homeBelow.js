@@ -8,12 +8,12 @@ const HomeBelow = () => {
           <div class="section-content">
             <div class="section-1-content">
               <h1 class="section-1-title">
-                Stock marketanalytics taken to a whole new level.
+                Stock market analytics taken to a whole new level.
               </h1>
               <p class="section-1-desc">
                 Stockwatch is a suite of Stock marketanalytics that will help
-                you better understand your audience, which tweets they like, and
-                most importantly, when they are the msot active on Twitter.
+                you better understand your audience, which analysis they like,
+                and most importantly, when they are the msot active on Twitter.
               </p>
               <div class="section-1-links">
                 <a href="#" class="section-1-link social-link">
@@ -64,7 +64,7 @@ const HomeBelow = () => {
               </div>
               <p class="section-1-alt-txt">
                 Join <span>195</span> others who have analyzed their followers
-                and scheduled <span>1342</span> tweets!
+                and scheduled <span>1342</span> analysis!
               </p>
             </div>
             <div class="section-1-img">
@@ -121,10 +121,10 @@ const HomeBelow = () => {
                     alt=""
                   />
                 </div>
-                <h4 class="card-title">Scheduled Your Tweets</h4>
+                <h4 class="card-title">Scheduled Your analysis</h4>
                 <p class="card-text">
-                  Quality tweets drive tons of engagement. With Chirp, you can
-                  write tweets in an advance and schedule them when your
+                  Quality analysis drive tons of engagement. With Chirp, you can
+                  write analysis in an advance and schedule them when your
                   audience is most likely to read.
                 </p>
               </div>
@@ -138,7 +138,7 @@ const HomeBelow = () => {
                 <h4 class="card-title">Dark Mode</h4>
                 <p class="card-text">
                   Friendly on the eyes, no matter what time you write your
-                  Tweets. All colors are chosen to make sure your eyes are at
+                  analysis. All colors are chosen to make sure your eyes are at
                   ease at all times.
                 </p>
               </div>
@@ -288,7 +288,7 @@ const HomeBelow = () => {
                 <div class="pricing-card-details">
                   <span>Montly</span>
                   <div class="pricing-user-content">
-                    <h1>$9</h1>
+                    <h1>$0</h1>
                     <span>/mo</span>
                   </div>
                 </div>
@@ -298,7 +298,7 @@ const HomeBelow = () => {
                       src="https://rvs-chirp-landing-page.vercel.app/Assets/Checkmark.svg"
                       alt=""
                     />{" "}
-                    <span>Unlimited* scheduled tweets and threads.</span>
+                    <span>Unlimited* scheduled analysis and threads.</span>
                   </li>
                   <li>
                     <img
