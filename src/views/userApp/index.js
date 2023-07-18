@@ -5,11 +5,17 @@ import { CCol, CRow } from "@coreui/react";
 import { Link, useNavigate } from "react-router-dom";
 import stockImg from "../../assets/images/6256458.jpg";
 import HomeBelow from "./pages/homeBelow";
+import HomeSlide from "./components/home/HomeSlide";
+import LiveData from "./components/home/LiveData";
+import axios from "axios";
 
 const Index = () => {
   const [sliderData, setSliderData] = useState([]);
   const [viceVersa, setViceVersa] = useState(false);
+  const [data, setData] = useState();
+  const [sensex, setSensex] = useState();
   const navigate = useNavigate();
+
   const arr = [
     {
       _id: "639acb46eedaa913c8fe912b",
@@ -370,6 +376,29 @@ const Index = () => {
     // }
   };
 
+  const getNifty = async () => {
+    try {
+      const response = await axios.get(
+        "https://priceapi.moneycontrol.com/pricefeed/notapplicable/inidicesindia/in%3BNSX"
+      );
+      console.log("response====>", response?.data);
+      setData(response?.data);
+    } catch (error) {
+      console.log("errrrror", error);
+    }
+  };
+  const getSensex = async () => {
+    try {
+      const response = await axios.get(
+        "https://priceapi.moneycontrol.com/pricefeed/notapplicable/inidicesindia/in%3BSEN"
+      );
+      console.log("response====>", response?.data);
+      setSensex(response?.data);
+    } catch (error) {
+      console.log("errrrror", error);
+    }
+  };
+
   function createGroups(arr) {
     const perGroup = Math.ceil(arr.length / 2);
     return new Array(2)
@@ -377,10 +406,16 @@ const Index = () => {
       .map((_, i) => arr.slice(i * perGroup, (i + 1) * perGroup));
   }
 
+  console.log("sensex and nifty", sensex, data);
+
   useEffect(() => {
     const newslitedarray = createGroups(arr);
     console.log("newslitedarray", newslitedarray);
     setSliderData(newslitedarray);
+  }, []);
+  useEffect(() => {
+    getSensex();
+    getNifty();
   }, []);
   return (
     <>
@@ -434,44 +469,81 @@ const Index = () => {
             </CCol>
             <CCol xl={7} className="p-3 py-0 slider-view-box">
               <div className="slider_box">
-                {/* <div className="slider-row">
-                  <Slider
-                    data={sliderData[0]}
-                    clickOnItem={clickOnCompony}
-                    direction="left"
-                  />
-                </div>
-                <div className="slider-row">
-                  <Slider
-                    data={sliderData[1]}
-                    clickOnItem={clickOnCompony}
-                    direction="right"
-                    class="revert-grid"
-                  />
-                </div> */}
-                <img src={stockImg} height="500px" width="700px" />
+                {/* Here is image */}
+                {/* <img src={stockImg} height="500px" width="700px" /> */}
+                <HomeSlide />
               </div>
             </CCol>
           </CRow>
         </div>
       </div>
-      {/* <div className="slider_box">
-        <div className="slider-row">
-          <Slider
-            data={sliderData[0]}
-            clickOnItem={clickOnCompony}
-            direction="left"
-          />
+      <div class="market_widget_cmn">
+        <div class="clearfix topHead">
+          <div class="mkt_lft">
+            <a
+              href="https://www.moneycontrol.com/stocksmarketsindia/"
+              title="Markets Data"
+            >
+              MARKETS DATA
+            </a>
+          </div>
         </div>
-        <div className="slider-row">
-          <Slider
-            data={sliderData[1]}
-            clickOnItem={clickOnCompony}
-            direction="right"
-            class="revert-grid"
-          />
-        </div>
-      </div> */}
+        <ul class="market_wrapdata">
+          <li>
+            <a
+              href="https://www.moneycontrol.com/indian-indices/nifty-50-9.html"
+              title="Nifty 50"
+              class="clearfix"
+            >
+              <div class="mkt_dtflt">
+                <p>Nifty 50</p>
+              </div>
+              <div class="mkt_dtrt">
+                <p class="mrkt_value">
+                  <span id="nifty_block_cp" class="">
+                    {data?.data?.pricecurrent}
+                  </span>
+                </p>
+                <p class="todayud_val">
+                  <span id="nifty_block_change">
+                    +{data?.data?.pricechange}
+                  </span>{" "}
+                  <span id="nifty_block_chg_pchg">
+                    (+{data?.data?.pricepercentchange}%)
+                  </span>
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.moneycontrol.com/indian-indices/sensex-4.html"
+              title="Sensex"
+              class="clearfix"
+            >
+              <div class="mkt_dtflt sens">
+                <p>Sensex</p>
+              </div>
+              <div class="mkt_dtrt">
+                <p class="mrkt_value">
+                  <span id="sensex_block_cp" class="">
+                    {sensex?.data?.pricecurrent}
+                  </span>
+                </p>
+                <p class="todayud_val">
+                  <span id="sensex_block_change">
+                    +{sensex?.data?.pricechange}
+                  </span>{" "}
+                  <span id="sensex_block_chg_pchg">
+                    (+{sensex?.data?.pricepercentchange}%)
+                  </span>
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <LiveData />
       <HomeBelow />
     </>
   );

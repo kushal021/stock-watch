@@ -36,6 +36,13 @@ const Login = () => {
         duration: 2000,
       });
       localStorage.setItem("uID", response?.data?.data?.token);
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          fName: response?.data?.data?.first_name,
+          lName: response?.data?.data?.last_name,
+        })
+      );
       navigate("/");
       // console.log("email, pass", response);
     } catch (error) {

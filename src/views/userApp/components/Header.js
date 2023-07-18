@@ -11,13 +11,25 @@ const Header = () => {
   const location = useLocation();
 
   const [isToken, setIsToken] = useState(null);
+  const [test, setTest] = useState();
 
-  console.log("locatin=====>", location);
+  console.log("locatin=====>", isToken);
+
+  const logout = () => {
+    localStorage.clear();
+    setIsToken();
+    navigate("/login");
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("uID");
-    setIsToken(token);
-  }, []);
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    const userObj = {
+      token,
+      userData,
+    };
+    setIsToken({ ...userObj });
+  }, [location]);
   return (
     <>
       <div className="container">
@@ -83,7 +95,7 @@ const Header = () => {
               >
                 Login
               </button> */}
-              {!isToken ? (
+              {!isToken?.token ? (
                 <button
                   className="btn btn-mod btn-border btn-circle btn-medium"
                   onClick={() => navigate("/login")}
@@ -93,13 +105,14 @@ const Header = () => {
               ) : (
                 <>
                   <CIcon icon={cilUser} size="xl" />
-                  <CDropdown className="mobile_drop_query">
+                  <CDropdown className="mobile_drop_query m-2">
                     <CDropdownToggle
                       color="ghost"
                       className="nav-link text-start"
                     >
                       {/* <CIcon icon={cilHamburgerMenu}></CIcon> */}
-                      profile
+                      {isToken?.userData?.fName}
+                      {console.log("ffffffffff", isToken?.userData)}
                       <CDropdownMenu>
                         {/* <NavLink
                           className={"nav-drop dropdown-item"}
@@ -109,12 +122,12 @@ const Header = () => {
                           Dashboard
                         </NavLink> */}
 
-                        <a
-                          // onClick={logout}
+                        <div
+                          onClick={logout}
                           className={"nav-drop dropdown-item"}
                         >
                           Logout
-                        </a>
+                        </div>
                         {/* {isToken ? (
                         <>
 
