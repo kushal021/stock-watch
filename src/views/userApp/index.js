@@ -477,7 +477,7 @@ const Index = () => {
           </CRow>
         </div>
       </div>
-      <div class="market_widget_cmn">
+      {/* <div class="market_widget_cmn">
         <div class="clearfix topHead">
           <div class="mkt_lft">
             <a
@@ -543,7 +543,7 @@ const Index = () => {
           </li>
         </ul>
       </div>
-      <LiveData />
+      <LiveData /> */}
       <HomeBelow />
     </>
   );

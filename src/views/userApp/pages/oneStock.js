@@ -14,6 +14,7 @@ const OneStock = () => {
   const [data, setData] = useState();
   const [volumeState, setVolumeState] = useState();
   const [bands, setBands] = useState();
+  const [signals, setSignals] = useState();
 
   let token = "";
   const { stockId } = useParams();
@@ -548,6 +549,17 @@ const OneStock = () => {
             }
           })
           ?.filter((ele) => ele !== undefined);
+        let buySellSignals = response?.data?.data?.data
+          ?.map((item) => {
+            if (item?.signal) {
+              return {
+                x: new Date(item?.date)?.getTime(),
+                title: item?.signal,
+                text: item?.signal,
+              };
+            }
+          })
+          ?.filter((ele) => ele !== undefined);
         setData(StockArray);
         setVolumeState(volumeArray);
         setBands({
@@ -555,6 +567,7 @@ const OneStock = () => {
           miidleBand: middleBandArray,
           upperBand: upperBandArray,
         });
+        setSignals(buySellSignals);
       }
     } catch (error) {
       console.log("eeeeeee", error);
@@ -659,20 +672,20 @@ const OneStock = () => {
           data: bands?.lowerBand,
           // data: arrayData,
           linkedTo: "aapl",
-          id: "dataseries",
+          id: "dataseriaaples",
         },
         {
           name: "Middle Band",
           data: bands?.middleBand,
           // data: arrayData,
-          // linkedTo: "aapl",
+          linkedTo: "aapl",
           id: "dataseries",
         },
         {
           name: "Upper Band",
           data: bands?.upperBand,
           // data: arrayData,
-          // linkedTo: "aapl",
+          linkedTo: "aapl",
           id: "dataseries",
         },
         {
@@ -681,29 +694,15 @@ const OneStock = () => {
             exposeAsGroupOnly: true,
             description: "Flagged events.",
           },
-          data: [
-            {
-              x: 1629874200000,
-              title: "Buy",
-              text: "Some event with a description",
-            },
-            {
-              x: 1631515800000,
-              title: "Sell",
-              text: "Some event with a description",
-            },
-            {
-              x: 1631479000000,
-              title: "Sell",
-              text: "Some event with a description",
-            },
-          ],
-          onSeries: "dataseries",
+          data: signals,
+          onSeries: "aapl",
           shape: "circlepin",
           width: 16,
         },
       ],
     };
+
+    console.log("signalsssssss", signals);
 
     Highcharts.stockChart("container", { ...configObj }),
       (chart) => {
