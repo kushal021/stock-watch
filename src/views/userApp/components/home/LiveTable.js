@@ -4,7 +4,7 @@ const LiveTable = ({ data, lData }) => {
   const [top, setTop] = useState("tg");
   console.log("data here in table======>", data);
   return (
-    <div className="wrapper">
+    <div className="wrapper-live">
       <div className="tabs-wrapper">
         <span className="left scroller-btn"></span>
         <ul id="scroller" className="nav nav-tabs">

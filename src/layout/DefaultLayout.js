@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   AppContent,
   AppSidebar,
   AppFooter,
   AppHeader,
 } from "../components/index";
+import { useNavigate } from "react-router-dom";
 
 const DefaultLayout = () => {
+  const navigate = useNavigate();
+  let adminToken = localStorage.getItem("aID");
+
+  useEffect(() => {
+    if (!adminToken) {
+      return navigate("/admin/login");
+    }
+  }, []);
   return (
     <div>
       <AppSidebar />

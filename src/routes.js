@@ -1,5 +1,7 @@
 import React from "react";
 import UserList from "./views/user";
+import StockList from "./views/stocks";
+import SingleStock from "./views/stocks/singleStock";
 
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
 const Colors = React.lazy(() => import("./views/theme/colors/Colors"));
@@ -80,8 +82,8 @@ const Widgets = React.lazy(() => import("./views/widgets/Widgets"));
 const routes = [
   { path: "/", exact: true, name: "Home" },
   { path: "/users", exact: true, name: "User", element: UserList },
-  // { path: "*", name: "Dashboard", element: Dashboard },
-  // { path: '/theme', name: 'Theme', element: Colors, exact: true },
+  { path: "/stocks", name: "Stocks", element: StockList, exact: true },
+  { path: "/stocks/:id", name: "One stock", element: SingleStock },
   // { path: '/theme/colors', name: 'Colors', element: Colors },
   // { path: '/theme/typography', name: 'Typography', element: Typography },
   // { path: '/base', name: 'Base', element: Cards, exact: true },

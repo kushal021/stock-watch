@@ -37,12 +37,12 @@ const _nav = [
     to: "/admin/users",
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
-  // {
-  //   component: CNavItem,
-  //   name: 'Typography',
-  //   to: '/theme/typography',
-  //   icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
-  // },
+  {
+    component: CNavItem,
+    name: "Stocks",
+    to: "/admin/stocks",
+    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
+  },
   // {
   //   component: CNavTitle,
   //   name: 'Components',
