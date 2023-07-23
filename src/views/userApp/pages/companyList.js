@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../../scss/indeaninternational.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import CIcon from "@coreui/icons-react";
 import { cilArrowCircleTop, cilEyedropper, cilLink } from "@coreui/icons";
@@ -11,6 +11,7 @@ const CompanyList = () => {
   const [loading, setLoading] = useState(false);
   const [filterData, setFilterData] = useState([]);
   const navigate = useNavigate();
+  const { strategyId } = useParams();
   let token = "";
 
   const getAllStockData = async () => {
@@ -30,7 +31,7 @@ const CompanyList = () => {
     }
     setLoading(false);
   };
-  console.log("eeeeeee dataaaaaaaa", data);
+  console.log("eeeeeee paramsssss", strategyId);
 
   useEffect(() => {
     getAllStockData();
@@ -474,8 +475,10 @@ const CompanyList = () => {
                                   {/* {Math.floor(Math.random() * 350) + 1} */}
                                 </td>
                                 <td
-                                  className="pe-auto"
-                                  onClick={() => navigate(`/stocks/${item}`)}
+                                  className="pe-auto cursor-pointer"
+                                  onClick={() =>
+                                    navigate(`/${strategyId}/${item}`)
+                                  }
                                 >
                                   <CIcon icon={cilLink} className="me-2" />
                                 </td>
@@ -490,8 +493,10 @@ const CompanyList = () => {
                                   {/* {Math.floor(Math.random() * 350) + 1} */}
                                 </td>
                                 <td
-                                  className="pe-auto"
-                                  onClick={() => navigate(`/stocks/${item}`)}
+                                  className="pe-auto cursor-pointer"
+                                  onClick={() =>
+                                    navigate(`/${strategyId}/${item}`)
+                                  }
                                 >
                                   <CIcon icon={cilLink} className="me-2" />
                                 </td>

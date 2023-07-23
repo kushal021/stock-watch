@@ -27,8 +27,8 @@ const AppUser = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/" element={<Index />} />
-        <Route exact path="/stocks" element={<CompanyList />} />
-        <Route exact path="/stocks/:stockId" element={<OneStock />} />
+        <Route exact path="/:strategyId" element={<CompanyList />} />
+        <Route exact path="/:strategyId/:stockId" element={<OneStock />} />
         {/* <Route path="/" element={<Navigate replace to="/login" />} /> */}
       </Routes>
       <Footer />

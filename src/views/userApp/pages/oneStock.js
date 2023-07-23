@@ -17,7 +17,7 @@ const OneStock = () => {
   const [signals, setSignals] = useState();
 
   let token = "";
-  const { stockId } = useParams();
+  const { stockId, strategyId } = useParams();
   console.log("locariiooooo", location);
   const arrayData = [
     [1626269400000, 148.1, 149.57, 147.68, 149.15, 127050800],
@@ -507,7 +507,11 @@ const OneStock = () => {
   const getShareData = async () => {
     try {
       const response = await userAxiosInstance.get(
-        `/investment/getInvestmentOptimisedData?shareName=${stockId}`,
+        strategyId === "breakfast-strategy"
+          ? `/investment/getInvestmentOptimisedData?shareName=${stockId}`
+          : strategyId === "positional-strategy"
+          ? `/otherStrategy/getPositionalStrategy?shareName=${stockId}`
+          : `/otherStrategy/getBreakfastStrategy?shareName=${stockId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -521,7 +525,7 @@ const OneStock = () => {
             item?.open,
             item?.high,
             item?.low,
-            item?.close,
+            item.close ? item.close : item?.prevClose,
           ];
         });
 

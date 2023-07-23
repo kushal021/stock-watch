@@ -413,10 +413,10 @@ const Index = () => {
     console.log("newslitedarray", newslitedarray);
     setSliderData(newslitedarray);
   }, []);
-  useEffect(() => {
-    getSensex();
-    getNifty();
-  }, []);
+  // useEffect(() => {
+  //   getSensex();
+  //   getNifty();
+  // }, []);
   return (
     <>
       <div className="main-content">
