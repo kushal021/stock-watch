@@ -29,12 +29,7 @@ const Footer = () => {
           </div>
         </div>
         <div class="footer-text">
-          <p>
-            Created by -{" "}
-            <a href="https://vetri-suriya.web.app/">
-              <span>Stock watch</span>
-            </a>
-          </p>
+          &copy; <span id="c_year">2023</span> Stock watch.
         </div>
       </div>
     </footer>

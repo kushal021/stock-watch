@@ -62,21 +62,21 @@ const HomeSlide = () => {
       <SplideSlide>
         <img
           class="d-block w-100"
-          src="https://storage.googleapis.com/download/storage/v1/b/tradeunlisted-aef3b.appspot.com/o/images%2F8938.617427816514care-health-insurance-unlisted-share.webp?generation=1671518396175295&alt=media"
+          src="https://images.prismic.io/tnfev2/0ccc4480-f5be-4d22-999f-e3831d87f99d_BRAND+TradingTools+Inverse+Hammer+2+-+No+Watermark+Teaser+Image+2240x1260.webp?auto=compress%2Cformat&fit=max&w=550"
           alt="First slide"
         />
       </SplideSlide>
       <SplideSlide>
         <img
           class="d-block w-100"
-          src="https://storage.googleapis.com/download/storage/v1/b/tradeunlisted-aef3b.appspot.com/o/images%2F7650.710156398491elcid-investments-unlisted-share.webp?generation=1671518176373856&alt=media"
+          src="https://static.vecteezy.com/system/resources/previews/027/120/317/large_2x/business-future-technology-market-economic-investment-and-money-concept-background-or-backdrop-common-forex-and-commodity-exchange-with-colorful-graphics-interface-ai-generated-photo.jpg"
           alt="Third slide"
         />
       </SplideSlide>
       <SplideSlide>
         <img
           class="d-block w-100"
-          src="https://storage.googleapis.com/download/storage/v1/b/tradeunlisted-aef3b.appspot.com/o/images%2F1500.474804718115webfil%20logo-01.png?generation=1677659243150416&alt=media"
+          src="https://dynamic-images.admiralmarkets.com/720x,webp/fxmedia.s3.amazonaws.com/articles/How_to_Read_Candlestick_Charts.jpeg"
           alt="Second slide"
         />
       </SplideSlide>

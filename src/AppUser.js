@@ -8,6 +8,7 @@ import Header from "./views/userApp/components/Header";
 import OneStock from "./views/userApp/pages/oneStock";
 import CompanyList from "./views/userApp/pages/companyList";
 import Footer from "./views/userApp/components/Footer";
+import StrategyList from "./views/userApp/pages/stratgyList";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -27,8 +28,13 @@ const AppUser = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/" element={<Index />} />
-        <Route exact path="/:strategyId" element={<CompanyList />} />
-        <Route exact path="/:strategyId/:stockId" element={<OneStock />} />
+        <Route exact path="/strategy/:id" element={<StrategyList />} />
+        <Route exact path="/stocks/:strategyId" element={<CompanyList />} />
+        <Route
+          exact
+          path="/stocks/:strategyId/:stockId"
+          element={<OneStock />}
+        />
         {/* <Route path="/" element={<Navigate replace to="/login" />} /> */}
       </Routes>
       <Footer />
