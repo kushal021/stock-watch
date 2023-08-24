@@ -3,7 +3,12 @@ import "../../../scss/indeaninternational.scss";
 import { useNavigate, useParams } from "react-router-dom";
 
 import CIcon from "@coreui/icons-react";
-import { cilArrowCircleTop, cilEyedropper, cilLink } from "@coreui/icons";
+import {
+  cilArrowCircleTop,
+  cilChartLine,
+  cilEyedropper,
+  cilLink,
+} from "@coreui/icons";
 import { userAxiosInstance } from "src/config";
 
 const CompanyList = () => {
@@ -43,10 +48,10 @@ const CompanyList = () => {
       <div class="container">
         <div class="row">
           <div class="col-md-offset-1 col-md-10">
-            <input
+            {/* <input
               type="date"
               onChange={(e) => console.log("eeeeee", e.target.value)}
-            />
+            /> */}
             <div class="panel my-5">
               <div class="panel-heading">
                 <div class="row">
@@ -111,13 +116,17 @@ const CompanyList = () => {
                                   {index + 21}
                                   {/* {Math.floor(Math.random() * 350) + 1} */}
                                 </td>
-                                <td
-                                  className="pe-auto cursor-pointer"
-                                  onClick={() =>
-                                    navigate(`/stocks/${strategyId}/${item}`)
-                                  }
-                                >
-                                  <CIcon icon={cilLink} className="me-2" />
+                                <td data-th="Chart">
+                                  <a
+                                    style={{
+                                      cursor: "pointer",
+                                      color: "inherit",
+                                    }}
+                                    href={`/stocks/chart-data/${item}`}
+                                    target="_blank"
+                                  >
+                                    <CIcon icon={cilChartLine} />
+                                  </a>
                                 </td>
                               </tr>
                             ))
@@ -129,13 +138,18 @@ const CompanyList = () => {
                                   {index + 21}
                                   {/* {Math.floor(Math.random() * 350) + 1} */}
                                 </td>
-                                <td
-                                  className="pe-auto cursor-pointer"
-                                  onClick={() =>
-                                    navigate(`/stocks/${strategyId}/${item}`)
-                                  }
-                                >
-                                  <CIcon icon={cilLink} className="me-2" />
+
+                                <td data-th="Chart">
+                                  <a
+                                    style={{
+                                      cursor: "pointer",
+                                      color: "inherit",
+                                    }}
+                                    href={`/stocks/chart-data/${item}`}
+                                    target="_blank"
+                                  >
+                                    <CIcon icon={cilChartLine} />
+                                  </a>
                                 </td>
                               </tr>
                             ))}
@@ -250,8 +264,8 @@ const CompanyList = () => {
                   <div class="panel-footer">
                     <div class="row">
                       <div class="col col-sm-6 col-xs-6">
-                        showing <b>{data?.Count}</b> out of <b>{data?.Count}</b>{" "}
-                        entries
+                        showing <b>{filterData?.length || data?.Count}</b> out
+                        of <b>{data?.Count}</b> entries
                       </div>
                       {/* <div class="col-sm-6 col-xs-6">
                     <ul class="pagination hidden-xs pull-right">

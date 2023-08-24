@@ -79,6 +79,7 @@ const OneStock = () => {
     optimised: "getInvestmentOptimisedData",
     investment: "getInvestmentExistingData",
     best: "getBestBuyStrategyData",
+    chart: "getInvestmentData",
   };
 
   const getShareData = async () => {
@@ -249,27 +250,27 @@ const OneStock = () => {
           // data: volume,
           yAxis: 1,
         },
-        {
-          name: "Lower Band",
-          data: bands?.lowerBand,
-          // data: arrayData,
-          linkedTo: "aapl",
-          id: "dataseriaaples",
-        },
-        {
-          name: "Middle Band",
-          data: bands?.middleBand,
-          // data: arrayData,
-          linkedTo: "aapl",
-          id: "dataseries",
-        },
-        {
-          name: "Upper Band",
-          data: bands?.upperBand,
-          // data: arrayData,
-          linkedTo: "aapl",
-          id: "dataseries",
-        },
+        // {
+        //   name: "Lower Band",
+        //   data: bands?.lowerBand,
+        //   // data: arrayData,
+        //   linkedTo: "aapl",
+        //   id: "dataseriaaples",
+        // },
+        // {
+        //   name: "Middle Band",
+        //   data: bands?.middleBand,
+        //   // data: arrayData,
+        //   linkedTo: "aapl",
+        //   id: "dataseries",
+        // },
+        // {
+        //   name: "Upper Band",
+        //   data: bands?.upperBand,
+        //   // data: arrayData,
+        //   linkedTo: "aapl",
+        //   id: "dataseries",
+        // },
         {
           type: "flags",
           accessibility: {

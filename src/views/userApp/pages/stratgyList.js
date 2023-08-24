@@ -3,9 +3,18 @@ import "../../../scss/indeaninternational.scss";
 import { useNavigate, useParams } from "react-router-dom";
 
 import CIcon from "@coreui/icons-react";
-import { cilArrowCircleTop, cilEyedropper, cilLink } from "@coreui/icons";
+import {
+  cilArrowCircleTop,
+  cilBarChart,
+  cilChart,
+  cilChartLine,
+  cilChartPie,
+  cilEyedropper,
+  cilLink,
+} from "@coreui/icons";
 import { userAxiosInstance } from "src/config";
 import Cards from "../components/home/Cards";
+import { CChart } from "@coreui/react-chartjs";
 
 const StrategyList = () => {
   const [data, setData] = useState();
@@ -96,8 +105,10 @@ const StrategyList = () => {
                               <th>Close</th> */}
                               <th>Date</th>
                               <th>Signal</th>
+                              <th>Open</th>
                               <th>Target Value</th>
                               <th>Target achieve</th>
+                              <th>Chart</th>
                             </tr>
 
                             {data?.data?.map((item, index) => (
@@ -126,10 +137,22 @@ const StrategyList = () => {
                                   </div>
                                 </td>
                                 <td data-th="Target Value">
+                                  {item?.open?.toFixed(2)}
+                                </td>
+                                <td data-th="Target Value">
                                   {item?.targetvalue?.toFixed(2)}
                                 </td>
                                 <td data-th="Target acieve">
                                   {item?.target ? "Achieved" : "Pending"}
+                                </td>
+                                <td data-th="Chart">
+                                  <a
+                                    style={{ cursor: "pointer" }}
+                                    href={`/stocks/${id}/${item?.name}`}
+                                    target="_blank"
+                                  >
+                                    <CIcon icon={cilChartLine} />
+                                  </a>
                                 </td>
                               </tr>
                             ))}

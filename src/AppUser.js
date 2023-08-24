@@ -29,7 +29,8 @@ const AppUser = () => {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/" element={<Index />} />
         <Route exact path="/strategy/:id" element={<StrategyList />} />
-        <Route exact path="/stocks/:strategyId" element={<CompanyList />} />
+        <Route exact path="/stocks" element={<CompanyList />} />
+        {/* <Route exact path="/stocks/:strategyId" element={<CompanyList />} /> */}
         <Route
           exact
           path="/stocks/:strategyId/:stockId"

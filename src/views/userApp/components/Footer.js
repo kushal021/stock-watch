@@ -1,5 +1,12 @@
 import React from "react";
 import SwLogo from "../../../assets/brand/swLogo.jpg";
+import CIcon from "@coreui/icons-react";
+import {
+  cibGmail,
+  cibMailRu,
+  cibMailchimp,
+  cibProtonmail,
+} from "@coreui/icons";
 
 const Footer = () => {
   return (
@@ -12,19 +19,19 @@ const Footer = () => {
           <div class="footer-links">
             <ul>
               <li>
-                <a href="#">
+                {/* <a href="#">
                   <img
                     src="https://rvs-chirp-landing-page.vercel.app/Assets/Twitter-Black.svg"
                     alt=""
                   />
-                </a>
+                </a> */}
+
+                <CIcon icon={cibGmail} />
               </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li>
+              <li>ssdagwar@gmail.com</li>
+              {/* <li>
                 <a href="#">Terms of Use</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

@@ -197,7 +197,7 @@ const HomeBelow = () => {
         </div>
       </section>
 
-      <section className="pricing-section section-4">
+      {/* <section className="pricing-section section-4">
         <div className="container">
           <div className="row justify-content-md-center">
             <div className="col-xl-5 col-lg-6 col-md-8">
@@ -209,7 +209,6 @@ const HomeBelow = () => {
               </div>
             </div>
           </div>
-          {/* <!-- Pricing Table starts --> */}
           <div className="row">
             <div className="col-md-3">
               <div className="price-card ">
@@ -295,7 +294,7 @@ const HomeBelow = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="section-2">
         <div className="section-2-main">
           <div className="section-2-1">
