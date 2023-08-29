@@ -419,7 +419,7 @@ const Index = () => {
   // }, []);
   return (
     <>
-      <div className="main-content">
+      <div className="mainCon">
         <div className="container my_custom_container slider_container px-0">
           <CRow className="w-100 main-row m-0 ">
             <CCol xl={5} className="left-block">
@@ -449,21 +449,21 @@ const Index = () => {
                     onMouseOver={() => setViceVersa(!viceVersa)}
                     onMouseOut={() => setViceVersa(false)}
                   >
-                    <Link
-                      to="/stocks"
+                    <a
+                      href="#strategyCard"
                       className={`know_link ${!viceVersa ? "buy" : "sell"}`}
                       onMouseOver={() => setViceVersa(!viceVersa)}
                       onMouseOut={() => setViceVersa(false)}
                     >
                       Get Insights
-                    </Link>
+                    </a>
                   </button>
                 </div>
                 <div className="main-title">
                   Stock watch is user friendly platform where one can find an
                   automated digital signal for trader as well as investor. An
                   indicator based signal which gives you smart profit with good
-                  accuracy :
+                  accuracy.
                 </div>
               </div>
             </CCol>
@@ -477,9 +477,9 @@ const Index = () => {
           </CRow>
         </div>
       </div>
-      {/* <div class="market_widget_cmn">
-        <div class="clearfix topHead">
-          <div class="mkt_lft">
+      {/* <div className="market_widget_cmn">
+        <div className="clearfix topHead">
+          <div className="mkt_lft">
             <a
               href="https://www.moneycontrol.com/stocksmarketsindia/"
               title="Markets Data"
@@ -488,23 +488,23 @@ const Index = () => {
             </a>
           </div>
         </div>
-        <ul class="market_wrapdata">
+        <ul className="market_wrapdata">
           <li>
             <a
               href="https://www.moneycontrol.com/indian-indices/nifty-50-9.html"
               title="Nifty 50"
-              class="clearfix"
+              className="clearfix"
             >
-              <div class="mkt_dtflt">
+              <div className="mkt_dtflt">
                 <p>Nifty 50</p>
               </div>
-              <div class="mkt_dtrt">
-                <p class="mrkt_value">
-                  <span id="nifty_block_cp" class="">
+              <div className="mkt_dtrt">
+                <p className="mrkt_value">
+                  <span id="nifty_block_cp" className="">
                     {data?.data?.pricecurrent}
                   </span>
                 </p>
-                <p class="todayud_val">
+                <p className="todayud_val">
                   <span id="nifty_block_change">
                     +{data?.data?.pricechange}
                   </span>{" "}
@@ -519,18 +519,18 @@ const Index = () => {
             <a
               href="https://www.moneycontrol.com/indian-indices/sensex-4.html"
               title="Sensex"
-              class="clearfix"
+              className="clearfix"
             >
-              <div class="mkt_dtflt sens">
+              <div className="mkt_dtflt sens">
                 <p>Sensex</p>
               </div>
-              <div class="mkt_dtrt">
-                <p class="mrkt_value">
-                  <span id="sensex_block_cp" class="">
+              <div className="mkt_dtrt">
+                <p className="mrkt_value">
+                  <span id="sensex_block_cp" className="">
                     {sensex?.data?.pricecurrent}
                   </span>
                 </p>
-                <p class="todayud_val">
+                <p className="todayud_val">
                   <span id="sensex_block_change">
                     +{sensex?.data?.pricechange}
                   </span>{" "}

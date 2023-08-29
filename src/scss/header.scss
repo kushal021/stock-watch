@@ -227,13 +227,13 @@ nav.navbar {
   font-size: 14px;
   text-align: justify;
 }
-.mobile_drop_query {
-  display: none;
+// .mobile_drop_query {
+//   display: none;
 
-  @include max-width(1299) {
-    display: block;
-  }
-}
+//   @include max-width(1299) {
+//     display: block;
+//   }
+// }
 .desktop_drop_query {
   display: none;
   @include min-width(1300) {

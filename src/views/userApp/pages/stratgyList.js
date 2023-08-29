@@ -4,7 +4,11 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import CIcon from "@coreui/icons-react";
 import {
+  cilArrowCircleLeft,
   cilArrowCircleTop,
+  cilArrowLeft,
+  cilArrowThickFromLeft,
+  cilArrowThickToLeft,
   cilBarChart,
   cilChart,
   cilChartLine,
@@ -66,35 +70,62 @@ const StrategyList = () => {
   return (
     <>
       {/* New Table */}
-      <Cards />
-      <div class="container">
-        <div class="row">
-          <div class="col-md-offset-1 col-md-10">
+      <div className="container">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "start",
+            cursor: "pointer",
+            marginTop: "9px",
+          }}
+          onClick={() => navigate(-1)}
+        >
+          <CIcon icon={cilArrowCircleLeft} size="xxl" />
+        </div>
+        <Cards />
+        <div className="row">
+          <div className="col-md-offset-1 col-md-10">
             <div
               style={{
                 display: "flex",
-                justifyContent: "end",
+                justifyContent: "center",
                 marginTop: "50px",
               }}
             >
-              <input
-                type="date"
-                onChange={(e) => getAllStockData(1, 100, e.target.value)}
-                min="2021-01-01"
-                max="2023-05-18"
-                defaultValue="2023-05-18"
-                className="cal"
-              />
+              <div>
+                <h1 style={{ textTransform: "capitalize" }}>
+                  {` ${apiSlug[0]} ${apiSlug[1]}
+                      strategy data`}
+                </h1>
+              </div>
             </div>
-            <div class="panel my-3">
+            <div className="panel my-3">
               {!loading ? (
                 <>
-                  <div class="panel-body table-responsive">
-                    <h1>
+                  <div className="panel-body table-responsive">
+                    {/* <h1>
                       {` ${apiSlug[0]} ${apiSlug[1]}
                       strategy data`}
-                    </h1>
-                    <table class="rwd-table">
+                    </h1> */}
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "end",
+                        margin: "10px 27px",
+                      }}
+                    >
+                      <input
+                        type="date"
+                        onChange={(e) =>
+                          getAllStockData(1, 100, e.target.value)
+                        }
+                        min="2021-01-01"
+                        max="2023-05-18"
+                        defaultValue="2023-05-18"
+                        className="cal"
+                      />
+                    </div>
+                    <table className="rwd-table">
                       <tbody>
                         {data?.data?.length ? (
                           <>
@@ -173,10 +204,10 @@ const StrategyList = () => {
                       </tbody>
                     </table>
                   </div>
-                  <div class="panel-footer">
-                    <div class="row">
+                  <div className="panel-footer">
+                    <div className="row">
                       {data?.data?.length && (
-                        <div class="col col-sm-6 col-xs-6">
+                        <div className="col col-sm-6 col-xs-6">
                           showing <b>{data?.Count}</b> out of{" "}
                           <b>{data?.Count}</b> entries
                         </div>
@@ -185,9 +216,9 @@ const StrategyList = () => {
                   </div>
                 </>
               ) : (
-                <div class="d-flex justify-content-center text-primary">
-                  <div class="spinner-border" role="status">
-                    {/* <span class="sr-only">Loading...</span> */}
+                <div className="d-flex justify-content-center text-primary">
+                  <div className="spinner-border" role="status">
+                    {/* <span className="sr-only">Loading...</span> */}
                   </div>
                 </div>
               )}

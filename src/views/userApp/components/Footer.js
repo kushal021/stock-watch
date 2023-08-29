@@ -11,12 +11,12 @@ import {
 const Footer = () => {
   return (
     <footer>
-      <div class="footer-main">
-        <div class="footer-content">
-          <div class="footer-logo">
+      <div className="footer-main">
+        <div className="footer-content">
+          <div className="footer-logo">
             <img src={SwLogo} alt="stock watch" width="100px" height="40px" />
           </div>
-          <div class="footer-links">
+          <div className="footer-links">
             <ul>
               <li>
                 {/* <a href="#">
@@ -35,7 +35,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div class="footer-text">
+        <div className="footer-text">
           &copy; <span id="c_year">2023</span> Stock watch.
         </div>
       </div>

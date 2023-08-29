@@ -8,7 +8,6 @@ const HomeSlide = () => {
     type: "loop",
     drag: "free",
     speed: 4000,
-    fixedWidth: 700,
     // rewind: true,
     // focus: "left",
     perPage: 1,
@@ -18,7 +17,10 @@ const HomeSlide = () => {
     gap: "1rem",
     lazyLoad: "nearby",
     autoScroll: {
-      speed: 4000,
+      speed: 5,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      rewind: false,
     },
     arrows: true,
     pagination: false,
@@ -56,31 +58,33 @@ const HomeSlide = () => {
     },
   };
 
-  const autoScroll = { AutoScroll };
+  // const autoScroll = { AutoScroll };
   return (
-    <Splide options={options} Extensions={autoScroll}>
-      <SplideSlide>
-        <img
-          class="d-block w-100"
-          src="https://images.prismic.io/tnfev2/0ccc4480-f5be-4d22-999f-e3831d87f99d_BRAND+TradingTools+Inverse+Hammer+2+-+No+Watermark+Teaser+Image+2240x1260.webp?auto=compress%2Cformat&fit=max&w=550"
-          alt="First slide"
-        />
-      </SplideSlide>
-      <SplideSlide>
-        <img
-          class="d-block w-100"
-          src="https://static.vecteezy.com/system/resources/previews/027/120/317/large_2x/business-future-technology-market-economic-investment-and-money-concept-background-or-backdrop-common-forex-and-commodity-exchange-with-colorful-graphics-interface-ai-generated-photo.jpg"
-          alt="Third slide"
-        />
-      </SplideSlide>
-      <SplideSlide>
-        <img
-          class="d-block w-100"
-          src="https://dynamic-images.admiralmarkets.com/720x,webp/fxmedia.s3.amazonaws.com/articles/How_to_Read_Candlestick_Charts.jpeg"
-          alt="Second slide"
-        />
-      </SplideSlide>
-    </Splide>
+    <>
+      <Splide options={options} extensions={{ AutoScroll }}>
+        <SplideSlide>
+          <img
+            className="d-block w-100"
+            src="https://images.prismic.io/tnfev2/0ccc4480-f5be-4d22-999f-e3831d87f99d_BRAND+TradingTools+Inverse+Hammer+2+-+No+Watermark+Teaser+Image+2240x1260.webp?auto=compress%2Cformat&fit=max&w=550"
+            alt="First slide"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            className="d-block w-100"
+            src="https://static.vecteezy.com/system/resources/previews/027/120/317/large_2x/business-future-technology-market-economic-investment-and-money-concept-background-or-backdrop-common-forex-and-commodity-exchange-with-colorful-graphics-interface-ai-generated-photo.jpg"
+            alt="Third slide"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            className="d-block w-100"
+            src="https://dynamic-images.admiralmarkets.com/720x,webp/fxmedia.s3.amazonaws.com/articles/How_to_Read_Candlestick_Charts.jpeg"
+            alt="Second slide"
+          />
+        </SplideSlide>
+      </Splide>
+    </>
   );
 };
 
