@@ -65,6 +65,7 @@ const StrategyList = () => {
 
   useEffect(() => {
     getAllStockData(1, 100, "2023-05-18");
+    alert(1);
   }, []);
 
   return (
