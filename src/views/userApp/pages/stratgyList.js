@@ -100,31 +100,29 @@ const StrategyList = () => {
               </div>
             </div>
             <div className="panel my-3">
-              {!loading ? (
-                <>
-                  <div className="panel-body table-responsive">
-                    {/* <h1>
+              <div className="panel-body table-responsive">
+                {/* <h1>
                       {` ${apiSlug[0]} ${apiSlug[1]}
                       strategy data`}
                     </h1> */}
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "end",
-                        margin: "10px 27px",
-                      }}
-                    >
-                      <input
-                        type="date"
-                        onChange={(e) =>
-                          getAllStockData(1, 100, e.target.value)
-                        }
-                        min="2021-01-01"
-                        max="2023-05-18"
-                        defaultValue="2023-05-18"
-                        className="cal"
-                      />
-                    </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "end",
+                    margin: "10px 27px",
+                  }}
+                >
+                  <input
+                    type="date"
+                    onChange={(e) => getAllStockData(1, 100, e.target.value)}
+                    min="2021-01-01"
+                    max="2023-05-18"
+                    defaultValue="2023-05-18"
+                    className="cal"
+                  />
+                </div>
+                {!loading ? (
+                  <>
                     <table className="rwd-table">
                       <tbody>
                         {data?.data?.length ? (
@@ -139,6 +137,10 @@ const StrategyList = () => {
                               <th>Open</th>
                               <th>Target Value</th>
                               <th>Target achieve</th>
+                              {(`${apiSlug[0]}` === "best" ||
+                                `${apiSlug[0]}` === "positional") && (
+                                <th>Target achieved Date</th>
+                              )}
                               <th>Chart</th>
                             </tr>
 
@@ -176,6 +178,18 @@ const StrategyList = () => {
                                 <td data-th="Target acieve">
                                   {item?.target ? "Achieved" : "Pending"}
                                 </td>
+                                {(`${apiSlug[0]}` === "best" ||
+                                  `${apiSlug[0]}` === "positional") && (
+                                  <td data-th="Target achieved Date">
+                                    {item?.target?.date &&
+                                      new Date(item?.target?.date)
+                                        .toISOString()
+                                        .replace(/T.*/, "")
+                                        .split("-")
+                                        .reverse()
+                                        .join("-")}
+                                  </td>
+                                )}
                                 <td data-th="Chart">
                                   <a
                                     style={{ cursor: "pointer" }}
@@ -203,25 +217,25 @@ const StrategyList = () => {
                         )}
                       </tbody>
                     </table>
-                  </div>
-                  <div className="panel-footer">
-                    <div className="row">
-                      {data?.data?.length && (
-                        <div className="col col-sm-6 col-xs-6">
-                          showing <b>{data?.Count}</b> out of{" "}
-                          <b>{data?.Count}</b> entries
-                        </div>
-                      )}
+                  </>
+                ) : (
+                  <div className="d-flex justify-content-center text-primary">
+                    <div className="spinner-border" role="status">
+                      {/* <span className="sr-only">Loading...</span> */}
                     </div>
                   </div>
-                </>
-              ) : (
-                <div className="d-flex justify-content-center text-primary">
-                  <div className="spinner-border" role="status">
-                    {/* <span className="sr-only">Loading...</span> */}
-                  </div>
+                )}
+              </div>
+              <div className="panel-footer">
+                <div className="row">
+                  {data?.data?.length && (
+                    <div className="col col-sm-6 col-xs-6">
+                      showing <b>{data?.Count}</b> out of <b>{data?.Count}</b>{" "}
+                      entries
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
