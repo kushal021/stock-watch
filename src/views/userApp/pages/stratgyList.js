@@ -138,7 +138,9 @@ const StrategyList = () => {
                               <th>Target Value</th>
                               <th>Target achieve</th>
                               {(`${apiSlug[0]}` === "best" ||
-                                `${apiSlug[0]}` === "positional") && (
+                                `${apiSlug[0]}` === "positional" ||
+                                `${apiSlug[0]}` === "investment" ||
+                                `${apiSlug[0]}` === "optimised") && (
                                 <th>Target achieved Date</th>
                               )}
                               <th>Chart</th>
@@ -179,15 +181,18 @@ const StrategyList = () => {
                                   {item?.target ? "Achieved" : "Pending"}
                                 </td>
                                 {(`${apiSlug[0]}` === "best" ||
-                                  `${apiSlug[0]}` === "positional") && (
+                                  `${apiSlug[0]}` === "positional" ||
+                                  `${apiSlug[0]}` === "investment" ||
+                                  `${apiSlug[0]}` === "optimised") && (
                                   <td data-th="Target achieved Date">
-                                    {item?.target?.date &&
+                                    {(item?.target?.date &&
                                       new Date(item?.target?.date)
                                         .toISOString()
                                         .replace(/T.*/, "")
                                         .split("-")
                                         .reverse()
-                                        .join("-")}
+                                        .join("-")) ||
+                                      "-"}
                                   </td>
                                 )}
                                 <td data-th="Chart">
