@@ -37,7 +37,7 @@ const Cards = () => {
   ];
   return (
     <>
-      <div className="row str-card m-0">
+      <div className="row str-card">
         {strategyArray?.map((item, index) => (
           <div
             className="parent-card  col-md-4 justify-content-md-center "

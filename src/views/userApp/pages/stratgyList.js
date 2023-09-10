@@ -84,7 +84,7 @@ const StrategyList = () => {
         </div>
         <Cards />
         <div className="row">
-          <div className="col-md-offset-1 col-md-10">
+          <div className="col-md-offset-1">
             <div
               style={{
                 display: "flex",

@@ -59,7 +59,7 @@ const CompanyList = () => {
           <CIcon icon={cilArrowCircleLeft} size="xxl" />
         </div>
         <div className="row">
-          <div className="col-md-offset-1 col-md-10">
+          <div className="col-md-offset-1">
             {/* <input
               type="date"
               onChange={(e) => console.log("eeeeee", e.target.value)}
