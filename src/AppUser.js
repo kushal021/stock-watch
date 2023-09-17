@@ -9,6 +9,8 @@ import OneStock from "./views/userApp/pages/oneStock";
 import CompanyList from "./views/userApp/pages/companyList";
 import Footer from "./views/userApp/components/Footer";
 import StrategyList from "./views/userApp/pages/stratgyList";
+import ForgotPassword from "./views/userApp/auth/forgotPassword";
+import ResetPassword from "./views/userApp/auth/resetPassword";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -27,6 +29,8 @@ const AppUser = () => {
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
+        <Route exact path="/forgot-password" element={<ForgotPassword />} />
+        <Route exact path="/reset-password" element={<ResetPassword />} />
         <Route exact path="/" element={<Index />} />
         <Route exact path="/strategy/:id" element={<StrategyList />} />
         <Route exact path="/stocks" element={<CompanyList />} />

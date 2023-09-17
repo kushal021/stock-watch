@@ -516,10 +516,10 @@ const Index = () => {
     console.log("newslitedarray", newslitedarray);
     setSliderData(newslitedarray);
   }, []);
-  // useEffect(() => {
-  //   getSensex();
-  //   getNifty();
-  // }, []);
+  useEffect(() => {
+    getSensex();
+    getNifty();
+  }, []);
   return (
     <>
       <div className="mainCon">
@@ -580,7 +580,7 @@ const Index = () => {
           </CRow>
         </div>
       </div>
-      {/* <div className="market_widget_cmn">
+      <div className="market_widget_cmn">
         <div className="clearfix topHead">
           <div className="mkt_lft">
             <a
@@ -646,7 +646,9 @@ const Index = () => {
           </li>
         </ul>
       </div>
-      <LiveData /> */}
+      <div className="mainCon">
+        <LiveData />
+      </div>
       <HomeBelow />
     </>
   );

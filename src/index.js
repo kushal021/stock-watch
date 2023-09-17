@@ -7,11 +7,14 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
 import { Toaster } from "react-hot-toast";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <App />
-    <Toaster />
+    <GoogleOAuthProvider clientId="603285354433-ubgl16i6pqpu34160pl796avbh1j0a70.apps.googleusercontent.com">
+      <App />
+      <Toaster />
+    </GoogleOAuthProvider>
   </Provider>
 );
 
