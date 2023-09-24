@@ -22,3 +22,4 @@ createRoot(document.getElementById("root")).render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+// https://www.cnbctv18.com/api/v1/home-page-changes

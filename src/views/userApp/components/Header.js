@@ -84,6 +84,26 @@ const Header = () => {
                       Stocks
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/news" && "nav-active"
+                      } `}
+                      to="/news"
+                    >
+                      News
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/about-us" && "nav-active"
+                      } `}
+                      to="/about-us"
+                    >
+                      About Us
+                    </Link>
+                  </li>
                   {/* <li className="nav-item">
                   <Link
                     className={`nav-link ${

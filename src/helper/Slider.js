@@ -1,9 +1,9 @@
 import React from "react";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+// import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 // import imageError from "../../../../assets/sliderOnerror.png";
 
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 import "../scss/home.scss";
 
 const Slider = ({ data, direction, clickOnItem }) => {
@@ -58,7 +58,7 @@ const Slider = ({ data, direction, clickOnItem }) => {
   //     },
   //   },
   // };
-  const autoScroll = { AutoScroll };
+  // const autoScroll = { AutoScroll };
 
   const sliderClick = (e, region) => {
     // console.log("slider_click id", e, region);
@@ -66,62 +66,63 @@ const Slider = ({ data, direction, clickOnItem }) => {
   };
 
   return (
-    <Marquee
-      gradientColor={[244, 245, 247]}
-      gradientWidth={50}
-      speed={50}
-      delay={1}
-      className="my-marquee"
-      direction={direction}
-    >
-      {data &&
-        data?.map((item, i) => (
-          <div className="border_box" key={i}>
-            {/* {console.log(item)} */}
-            <div
-              className="slide-content-box"
-              onClick={() => sliderClick(item?.url, item?.region)}
-            >
-              <img
-                className="slider_img"
-                src={item?.logo}
-                // onError={(e) => (e.target.src = imageError)}
-                alt="Img 1"
-              />
-              {/* <div>
-                <p className="text-center m-0 text-line">
-                  <b>{item.name}</b>
-                </p>
-                <p className="sector-">{item.sector}</p>
-              </div> */}
-              {/* <div
-                className={`label  ${
-                  item?.status === "Available"
-                    ? "card-labal-1"
-                    : item?.status === "Sold Out"
-                    ? "card-labal-2"
-                    : "card-labal-3"
-                }`}
-              >
-                {item?.status}
-              </div> */}
+    <></>
+    // <Marquee
+    //   gradientColor={[244, 245, 247]}
+    //   gradientWidth={50}
+    //   speed={50}
+    //   delay={1}
+    //   className="my-marquee"
+    //   direction={direction}
+    // >
+    //   {data &&
+    //     data?.map((item, i) => (
+    //       <div className="border_box" key={i}>
+    //         {/* {console.log(item)} */}
+    //         <div
+    //           className="slide-content-box"
+    //           onClick={() => sliderClick(item?.url, item?.region)}
+    //         >
+    //           <img
+    //             className="slider_img"
+    //             src={item?.logo}
+    //             // onError={(e) => (e.target.src = imageError)}
+    //             alt="Img 1"
+    //           />
+    //           {/* <div>
+    //             <p className="text-center m-0 text-line">
+    //               <b>{item.name}</b>
+    //             </p>
+    //             <p className="sector-">{item.sector}</p>
+    //           </div> */}
+    //           {/* <div
+    //             className={`label  ${
+    //               item?.status === "Available"
+    //                 ? "card-labal-1"
+    //                 : item?.status === "Sold Out"
+    //                 ? "card-labal-2"
+    //                 : "card-labal-3"
+    //             }`}
+    //           >
+    //             {item?.status}
+    //           </div> */}
 
-              {/* <div className="desc-content"> */}
-              {/* <div className="grid-content"> */}
-              {/* <div className="grid-content">
-                  <div className="price">Price</div>
-                  <div className="price-content">
-                    &#8377;{item.pricePerShare}
-                  </div>
-                </div> */}
-              {/* </div> */}
-            </div>
-            {/* <div className="bg-gray text-center py-1 explore-color">
-              EXPLORE
-            </div> */}
-          </div>
-        ))}
-    </Marquee>
+    //           {/* <div className="desc-content"> */}
+    //           {/* <div className="grid-content"> */}
+    //           {/* <div className="grid-content">
+    //               <div className="price">Price</div>
+    //               <div className="price-content">
+    //                 &#8377;{item.pricePerShare}
+    //               </div>
+    //             </div> */}
+    //           {/* </div> */}
+    //         </div>
+    //         {/* <div className="bg-gray text-center py-1 explore-color">
+    //           EXPLORE
+    //         </div> */}
+    //       </div>
+    //     ))}
+    // </Marquee>
     // <Splide options={options} Extensions={autoScroll}>
     //   {data &&
     //     data?.map((item, i) => (

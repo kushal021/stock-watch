@@ -22,9 +22,8 @@
     "@coreui/react": "^4.6.0",
     "@coreui/react-chartjs": "^2.1.2",
     "@coreui/utils": "^2.0.1",
+    "@popperjs/core": "^2.11.8",
     "@react-oauth/google": "^0.11.1",
-    "@splidejs/react-splide": "^0.7.12",
-    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "apexcharts": "^3.40.0",
     "axios": "^1.4.0",
     "chart.js": "^3.9.1",
@@ -38,14 +37,14 @@
     "react-apexcharts": "^1.4.0",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
-    "react-fast-marquee": "^1.6.0",
     "react-hot-toast": "^2.4.1",
     "react-jsx-highcharts": "^5.0.1",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "redux": "4.2.1",
     "serve": "^14.2.0",
-    "simplebar-react": "^2.4.3"
+    "simplebar-react": "^2.4.3",
+    "swiper": "^10.2.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

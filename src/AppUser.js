@@ -11,6 +11,8 @@ import Footer from "./views/userApp/components/Footer";
 import StrategyList from "./views/userApp/pages/stratgyList";
 import ForgotPassword from "./views/userApp/auth/forgotPassword";
 import ResetPassword from "./views/userApp/auth/resetPassword";
+import News from "./views/userApp/pages/news";
+import AboutUs from "./views/userApp/pages/aboutUs";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -34,6 +36,8 @@ const AppUser = () => {
         <Route exact path="/" element={<Index />} />
         <Route exact path="/strategy/:id" element={<StrategyList />} />
         <Route exact path="/stocks" element={<CompanyList />} />
+        <Route exact path="/news" element={<News />} />
+        <Route exact path="/about-us" element={<AboutUs />} />
         {/* <Route exact path="/stocks/:strategyId" element={<CompanyList />} /> */}
         <Route
           exact
