@@ -15,7 +15,12 @@ import {
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 import { cilLockLocked } from "@coreui/icons";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import toast from "react-hot-toast";
 import { userAxiosInstance } from "src/config";
 
@@ -26,13 +31,21 @@ const ResetPassword = () => {
     confirmPass: "",
   });
 
+  const [params, setParams] = useSearchParams();
+  const navigate = useNavigate();
+
   const handleResetPass = async () => {
     if (password.confirmPass && password.pass) {
       if (password.pass === password.confirmPass) {
         setLoading(true);
         try {
           const response = await userAxiosInstance.get(
-            `/auth/forgotPassword?password=${password.pass}`
+            `/auth/forgotPassword?password=${password.pass}`,
+            {
+              headers: {
+                Authorization: `Bearer ${params.get("id")}`,
+              },
+            }
           );
           if (response.data) {
             toast.success("Password reset successfully!", {

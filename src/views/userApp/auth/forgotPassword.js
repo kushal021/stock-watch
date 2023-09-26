@@ -77,7 +77,7 @@ const ForgotPassword = () => {
           });
 
           // setStep(2);
-          navigate("/reset-password");
+          navigate(`/reset-password?id=${response.data?.data}`);
         }
       } catch (error) {
         toast.error(
