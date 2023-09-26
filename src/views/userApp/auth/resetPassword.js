@@ -32,7 +32,7 @@ const ResetPassword = () => {
         setLoading(true);
         try {
           const response = await userAxiosInstance.get(
-            `/auth/forgotPassword?password=${password}`
+            `/auth/forgotPassword?password=${password.pass}`
           );
           if (response.data) {
             toast.success("Password reset successfully!", {
