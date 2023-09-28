@@ -104,10 +104,11 @@ $form-font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   }
   
   .otp-field input {
-    height: 45px;
+    height: 41px;
     width: 42px;
     border-radius: 6px;
     outline: none;

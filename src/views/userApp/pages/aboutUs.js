@@ -10,28 +10,25 @@ const AboutUs = () => {
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
               <div class="inner-column">
                 <div class="sec-title">
-                  <span class="title">About Stockwatch</span>
-                  <h2>We are Creative Tech Enthusiast working since 2021</h2>
+                  <span class="title">Behind This Platform</span>
+                  <h2>We Are Stock Enthusiast Working From Last 15 Years</h2>
                 </div>
                 <div class="text">
-                  I am Kushal Rajyaguru works at Css3 Transition since last 3
-                  years. We are here to provide touch notch solution for your
-                  website or web application that helps you to make your website
-                  look attractive & efficient in handling by creating usefull
-                  plugins thats you need.
+                  Mrs Shubhangi Shitalkumar Dagwar having more than 15yrs of
+                  experience in stock market. She is also pursuing her Ph.D in
+                  algo trading. The main purposed behind Stockwatch is to
+                  provide education and guidance about stock market so that User
+                  may get proper benefit from this.
                 </div>
                 <div class="text">
-                  We are here to serve you next level tutorial that currently in
-                  trend to match you with your expertise. Css3 transition is a
-                  learning website. where you can find many good quality content
-                  related to web development and tutorials about plugins. here
-                  we are using html, html5, css, css3, jquery & javascript along
-                  with inspirational UI design layout by professionals by using
-                  Photoshop and adobe allustrator.
+                  Stockwatch provide momentum based stock signal in real time
+                  application. It provide the signal to day traders and
+                  investors too. It also provide the Target price of signal.
+                  User may get benefit from this with minimum risk.
                 </div>
                 <div class="btn-box">
-                  <a href="#" class="theme-btn btn-style-one">
-                    Contact Us
+                  <a href="/" class="theme-btn btn-style-one">
+                    Explore Stock Watch
                   </a>
                 </div>
               </div>
@@ -40,13 +37,13 @@ const AboutUs = () => {
             <div class="image-column col-lg-6 col-md-12 col-sm-12">
               <div class="inner-column wow fadeInLeft">
                 <div class="author-desc">
-                  <h2>Kushal Rajyaguru</h2>
-                  <span>Web Developer</span>
+                  <h2>Stock watch</h2>
+                  <span>Stock analysis</span>
                 </div>
                 <figure class="image-1">
                   <a href="#" class="lightbox-image" data-fancybox="images">
                     <img
-                      title="Kushal Rajyaguru"
+                      title="Stock watch"
                       src="https://i.ibb.co/QP6Nmpf/image-1-about.jpg"
                       alt=""
                     ></img>
@@ -56,15 +53,15 @@ const AboutUs = () => {
             </div>
           </div>
           <div class="sec-title">
-            <span class="title">Our Future Goal</span>
-            <h2>We want to lead in innovation & Technology</h2>
+            <span class="title">About Stock watch</span>
+            <h2>Vision of Stock watch</h2>
           </div>
           <div class="text">
-            We works on UI/UX and functionality as well so that a plugins comes
-            with proper stucture & stunning looks which suits to your web app &
-            website.
+            Stockwatch website is designed for purely educational purpose. The
+            main object of stockwatch is to provide the accurate signal to
+            traders as well as Investors.
           </div>
-          <div class="text">
+          {/* <div class="text">
             We take a small toolkit here and ride it well so that it is fit for
             your use. One who performs well and looks even better.
           </div>
@@ -82,7 +79,7 @@ const AboutUs = () => {
           <div class="text">
             In the end, I would say keep visiting our website and enjoy the
             quality content.
-          </div>
+          </div> */}
         </div>
       </section>
     </>

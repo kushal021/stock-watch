@@ -9,6 +9,8 @@ const ForgotPassword = () => {
   const [otp, setOtp] = useState();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [mode, setMode] = useState("sign up");
+
   const navigate = useNavigate();
 
   let tabChange = function (val) {
@@ -44,7 +46,7 @@ const ForgotPassword = () => {
             duration: 2000,
           });
 
-          setStep(2);
+          setMode("sign in");
         }
       } catch (error) {
         toast.error(
@@ -99,15 +101,12 @@ const ForgotPassword = () => {
 
   return (
     <>
-      {step === 1 ? (
+      {/* {step === 1 ? (
         <div>
           <h1 className="forgot-h1">Forgot your password?</h1>
           <div className="hr-div">
             <hr className="forgot-hr"></hr>
           </div>
-          {/* <h3 className="forgot-h3">
-        Enter your email address to reset your password
-      </h3> */}
 
           <form
             action="index.html"
@@ -161,12 +160,7 @@ const ForgotPassword = () => {
                   <p>Your code was sent to you via email</p>
 
                   <div className="otp-field mb-4">
-                    {/* <input type="number" />
-                    <input type="number" disabled />
-                    <input type="number" disabled />
-                    <input type="number" disabled />
-                    <input type="number" disabled />
-                    <input type="number" disabled /> */}
+              
                     {[1, 2, 3, 4, 5, 6].map((item, index) => (
                       <input
                         key={index}
@@ -198,7 +192,103 @@ const ForgotPassword = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
+      <div className="d-flex flex-md-row flex-row align-items-center justify-content-center m-5">
+        <div
+          class={`container-login ${
+            mode === "sign up" && "right-panel-active"
+          } `}
+          id="container-login"
+        >
+          <div class="form-container-login sign-up-container-login">
+            <form action="#" className="form-login">
+              <h1 className="h1-login">Forgot Password</h1>
+
+              <span className="span-login">Enter your email below</span>
+              <input
+                className="input-login"
+                type="text"
+                placeholder="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+
+              <button
+                type="button"
+                className="button-login"
+                onClick={() => handleForgotEmail()}
+                disabled={loading}
+              >
+                {loading ? "Please wait" : "Send Reset Email"}
+              </button>
+            </form>
+          </div>
+          <div class="form-container-login sign-in-container-login">
+            <form action="#" className="form-login">
+              <h1 className="h1-login">OTP Verification</h1>
+
+              <span className="span-login">Enter six digit OTP below</span>
+              <div className="otp-field mb-4">
+                {[1, 2, 3, 4, 5, 6].map((item, index) => (
+                  <input
+                    key={index}
+                    className="tab-class input-login"
+                    type="text"
+                    name=""
+                    id=""
+                    maxLength={1}
+                    onKeyUp={(e) => tabChange(item)}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                className="button-login"
+                onClick={() => handleVerifyOtp()}
+                disabled={loading}
+              >
+                {loading ? "Please wait" : "Verify"}
+              </button>
+            </form>
+          </div>
+          <div class="overlay-container-login">
+            <div class="overlay-login">
+              <div class="overlay-panel-login overlay-left-login">
+                <h1 className="h1-login">Welcome Back!</h1>
+                <p className="p-login">
+                  Enter the email associated with your account and we will send
+                  an email with OTP to recover your password. Or if you remeber
+                  your credential sign in here.
+                </p>
+                <button
+                  type="button"
+                  className="button-login ghost"
+                  id="signIn"
+                  onClick={() => navigate("/login")}
+                >
+                  Sign In
+                </button>
+              </div>
+              <div class="overlay-panel-login overlay-right-login">
+                <h1 className="h1-login">Didn't receive OTP!</h1>
+                <p className="p-login">
+                  {" "}
+                  Don't worry, You can still request it again.
+                </p>
+                <button
+                  type="button"
+                  className="button-login ghost"
+                  id="signUp"
+                  onClick={() => setMode("sign up")}
+                >
+                  Request again
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -58,9 +58,9 @@ const News = () => {
               role="tablist"
             >
               <Swiper
-                spaceBetween={30}
+                spaceBetween={15}
                 //   centeredSlides={true}
-                slidesPerView={6}
+                slidesPerView={4}
                 breakpoints={{
                   576: {
                     slidesPerView: 3,
@@ -83,7 +83,7 @@ const News = () => {
               >
                 {data &&
                   Object.entries(data)?.map(([key, value], index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={index} style={{ cursor: "pointer" }}>
                       <li
                         className="nav-item nav-item-tabsClass "
                         onClick={() => setCategory({ key, data: value })}
@@ -102,7 +102,6 @@ const News = () => {
               </Swiper>
             </ul>
           </div>
-          {console.log("key category", category)}
         </div>
         {0 ? (
           <>
