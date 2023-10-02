@@ -60,17 +60,17 @@ const News = () => {
               <Swiper
                 spaceBetween={15}
                 //   centeredSlides={true}
-                slidesPerView={4}
+                slidesPerView={3}
                 breakpoints={{
                   576: {
                     slidesPerView: 3,
                   },
                   768: {
                     width: 768,
-                    slidesPerView: 6,
+                    slidesPerView: 3,
                   },
                   328: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                   },
                 }}
                 //   pagination={{

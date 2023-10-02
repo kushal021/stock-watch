@@ -30,6 +30,7 @@ const ResetPassword = () => {
     pass: "",
     confirmPass: "",
   });
+  const [mode, setMode] = useState("sign in");
 
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
@@ -79,71 +80,7 @@ const ResetPassword = () => {
   };
   return (
     <>
-      {/* <div class="container-resetpass " id="container-resetpass">
-        <div class="form-container sign-up-container">
-          <form action="#">
-            <h1>Create Account</h1>
-            <div class="social-container">
-              <a href="#" class="social">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-            <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
-          </form>
-        </div>
-        <div class="form-container sign-in-container">
-          <form action="#">
-            <h1>Sign in</h1>
-            <div class="social-container">
-              <a href="#" class="social">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-            <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
-          </form>
-        </div>
-        <div class="overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button class="ghost" id="signIn">
-                Sign In
-              </button>
-            </div>
-            <div class="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button class="ghost" id="signUp">
-                Sign Up
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
+      {/* <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
         <CContainer>
           <CRow className="justify-content-center">
             <CCol md={8}>
@@ -196,9 +133,7 @@ const ResetPassword = () => {
                           </CButton>
                         </CCol>
                         <CCol xs={6} className="text-right">
-                          {/* <CButton color="link" className="px-0">
-                          Forgot password?
-                        </CButton> */}
+                          
                         </CCol>
                         <CCol xs={6} className="text-right"></CCol>
                       </CRow>
@@ -232,6 +167,68 @@ const ResetPassword = () => {
             </CCol>
           </CRow>
         </CContainer>
+      </div> */}
+      <div className="d-flex flex-md-row flex-row align-items-center justify-content-center m-5">
+        <div
+          class={`container-login ${
+            mode === "sign up" && "right-panel-active"
+          } `}
+          id="container-login"
+        >
+          <div class="form-container-login sign-in-container-login">
+            <form action="#" className="form-login">
+              <h1 className="h1-login">Reset Password</h1>
+
+              <span className="span-login">Enter your new password below</span>
+              <input
+                className="input-login"
+                type="password"
+                placeholder="Password"
+                value={password.pass}
+                onChange={(e) =>
+                  setPassword({ ...password, pass: e.target.value })
+                }
+              />
+              <input
+                className="input-login"
+                type="password"
+                placeholder="Confirm Password"
+                value={password.confirmPass}
+                onChange={(e) =>
+                  setPassword({
+                    ...password,
+                    confirmPass: e.target.value,
+                  })
+                }
+              />
+
+              <button
+                type="button"
+                className="button-login"
+                onClick={() => handleResetPass()}
+                disabled={loading}
+              >
+                {loading ? "Please wait" : "Reset"}
+              </button>
+            </form>
+          </div>
+          <div class="overlay-container-login">
+            <div class="overlay-login">
+              <div class="overlay-panel-login overlay-right-login">
+                <h1 className="h1-login">Set new password</h1>
+                <p className="p-login"> Use password that is hard to guess.</p>
+                <button
+                  type="button"
+                  className="button-login ghost"
+                  id="signUp"
+                  onClick={() => navigate("/")}
+                >
+                  Home
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
