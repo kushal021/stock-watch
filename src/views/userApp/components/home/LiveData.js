@@ -10,9 +10,11 @@ const LiveData = () => {
   const getDataGainer = async () => {
     try {
       const response = await axios.get(
-        "https://www.cnbctv18.com/api/v1/market-movers/?section=top_gainers&limit=5"
+        "https://www.moneycontrol.com/techmvc/mc_apis/market_action/?section=top_gainers&limit=5"
       );
-      console.log("response====>", response?.data);
+      // const response = await axios.get(
+      //   "https://www.cnbctv18.com/api/v1/market-movers/?section=top_gainers&limit=5"
+      // );
       setData(response?.data);
     } catch (error) {
       console.log("errrrror", error);
@@ -21,9 +23,11 @@ const LiveData = () => {
   const getDataLoser = async () => {
     try {
       const response = await axios.get(
-        "https://www.cnbctv18.com/api/v1/market-movers/?section=top_losers&limit=5"
+        "https://www.moneycontrol.com/techmvc/mc_apis/market_action/?section=top_losers&limit=5"
       );
-      console.log("response====>", response?.data);
+      // const response = await axios.get(
+      //   "https://www.cnbctv18.com/api/v1/market-movers/?section=top_losers&limit=5"
+      // );
       setLoserData(response?.data);
     } catch (error) {
       console.log("errrrror", error);

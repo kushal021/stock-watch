@@ -11,9 +11,6 @@ const Header = () => {
   const location = useLocation();
 
   const [isToken, setIsToken] = useState(null);
-  const [test, setTest] = useState();
-
-  console.log("locatin=====>", isToken);
 
   const logout = () => {
     localStorage.clear();

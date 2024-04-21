@@ -464,7 +464,6 @@ const Index = () => {
     const dataperson = val.map((item, index) => {
       return item.name;
     });
-    console.log("dataperson", dataperson);
   };
 
   useEffect(() => {
@@ -485,7 +484,6 @@ const Index = () => {
       const response = await axios.get(
         "https://priceapi.moneycontrol.com/pricefeed/notapplicable/inidicesindia/in%3BNSX"
       );
-      console.log("response====>", response?.data);
       setData(response?.data);
     } catch (error) {
       console.log("errrrror", error);
@@ -496,7 +494,6 @@ const Index = () => {
       const response = await axios.get(
         "https://priceapi.moneycontrol.com/pricefeed/notapplicable/inidicesindia/in%3BSEN"
       );
-      console.log("response====>", response?.data);
       setSensex(response?.data);
     } catch (error) {
       console.log("errrrror", error);
@@ -510,11 +507,8 @@ const Index = () => {
       .map((_, i) => arr.slice(i * perGroup, (i + 1) * perGroup));
   }
 
-  console.log("sensex and nifty", sensex, data);
-
   useEffect(() => {
     const newslitedarray = createGroups(arr);
-    console.log("newslitedarray", newslitedarray);
     setSliderData(newslitedarray);
   }, []);
   useEffect(() => {
@@ -682,8 +676,14 @@ const Index = () => {
           </div>
           <div className="card-number"> {data?.data?.pricecurrent}</div>
           <div className="card-txt">
-            {" "}
-            +{data?.data?.pricechange} (+{data?.data?.pricepercentchange}%)
+            {parseInt(data?.data?.pricecurrent) -
+              parseInt(data?.data?.priceprevclose) >
+              0 && "+"}
+            {data?.data?.pricechange} (
+            {parseInt(data?.data?.pricecurrent) -
+              parseInt(data?.data?.priceprevclose) >
+              0 && "+"}
+            {data?.data?.pricepercentchange}%)
           </div>
         </div>
         <div
@@ -720,7 +720,14 @@ const Index = () => {
           </div>
           <div className="card-number"> {sensex?.data?.pricecurrent}</div>
           <div className="card-txt">
-            +{sensex?.data?.pricechange} (+{sensex?.data?.pricepercentchange}%)
+            {parseInt(sensex?.data?.pricecurrent) -
+              parseInt(sensex?.data?.priceprevclose) >
+              0 && "+"}
+            {sensex?.data?.pricechange} (
+            {parseInt(sensex?.data?.pricecurrent) -
+              parseInt(sensex?.data?.priceprevclose) >
+              0 && "+"}
+            {sensex?.data?.pricepercentchange}%)
           </div>
         </div>
       </div>

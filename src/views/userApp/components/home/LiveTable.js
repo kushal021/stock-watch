@@ -24,10 +24,8 @@ import stockImg from "../../../../assets/images/6256458.jpg";
 // import stockImg from "../../assets/images/6256458.jpg";
 
 const LiveTable = ({ data, lData }) => {
-  const [top, setTop] = useState("tg");
   const [activeKey, setActiveKey] = useState(1);
 
-  console.log("data here in table======>", data);
   return (
     <>
       {/* <div className="wrapper-live">
